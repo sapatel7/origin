@@ -36,7 +36,7 @@ def makeWebhookResult(req):
 
     cost = {'Heart':'heartAttack()', 'Paralysis':'paralysis()', 'Snake Bite':'snakeBite()','Call Ambulance':'CallAmbulance()'}
 
-    speech = "Function called: "
+    speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
 
     print("Response:")
     print(speech)
