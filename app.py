@@ -22,20 +22,13 @@ def webhook():
     res = makeWebhookResult(req)
 
     res = json.dumps(res, indent=4)
-    print("Hello Webhook")
+    print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
 
 def makeWebhookResult(req):
-    
-    result = req.get("result")
-    contexts = result.get("contexts")
-    parameters = contexts.get("parameters")
-    components = parameters.get("components")
-    emergency = parameters.get("emergency")
-
-    speech = components + " webhook " + emergency
+    speech = "Hello Webhook"
 
     print("Response:")
     print(speech)
