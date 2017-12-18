@@ -28,15 +28,13 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "emergency.current":
-        return {}
     result = req.get("result")
     contexts[] = result.get("contexts")
     parameters = contexts[0].get("parameters")
     components = parameters.get("components")
     emergency = parameters.get("emergency")
 
-    speech = components + " webhook " + emergency
+    speech = str(components) + " webhook " + str(emergency)
 
     print("Response:")
     print(speech)
