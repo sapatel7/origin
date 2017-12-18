@@ -28,15 +28,15 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "emergency.help":
+    if req.get("result").get("action") != "emergency.current":
         return {}
     result = req.get("result")
-    parameters = result.get("parameters")
-    zone = parameters.get("emergency")
+    contexts = result.get("contexts")
+    parameters = contexts.get("parameters")
+    components = parameters.get("components")
+    emergency = parameters.get("emergency")
 
-    cost = {'Heart Attack':'heartAttack()', 'Paralysis':'paralysis()', 'Snake Bite':'snakeBite()','Call Ambulance':'CallAmbulance()'}
-
-    speech = "Function Called: "+ str(cost[zone]) + "{...}"
+    speech = components + " webhook " + emergency
 
     print("Response:")
     print(speech)
