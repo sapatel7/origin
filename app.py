@@ -28,8 +28,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "emergency.current":
-        return {}
+    
     result = req.get("result")
     contexts = result.get("contexts")
     parameters = contexts.get("parameters")
