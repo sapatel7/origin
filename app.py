@@ -32,8 +32,9 @@ def makeWebhookResult(req):
     contexts = result.get("contexts")
     parameters = contexts[0].get("parameters")
     components = parameters.get("components")
+    emergency = parameters.get("emergency")
 
-    speech = str(components)
+    speech = str(components) + str(" webhook ") + str(emergency)
 
     print("Response:")
     print(speech)
