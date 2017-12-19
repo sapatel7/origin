@@ -30,9 +30,10 @@ def webhook():
 def makeWebhookResult(req):
     result = req.get("result")
     contexts = result.get("contexts")
-    name = contexts[0].get("name")
+    parameters = contexts[0].get("parameters")
+    components = parameters.get("components")
 
-    speech = str(name)
+    speech = str(components)
 
     print("Response:")
     print(speech)
