@@ -28,13 +28,9 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    result = req.get("result")
-    contexts[] = result.get("contexts")
-    parameters = contexts[0].get("parameters")
-    components = parameters.get("components")
-    emergency = parameters.get("emergency")
+    result = req.get("id")
 
-    speech = str(components) + " webhook " + str(emergency)
+    speech = str(result)
 
     print("Response:")
     print(speech)
