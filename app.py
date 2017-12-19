@@ -29,9 +29,10 @@ def webhook():
 
 def makeWebhookResult(req):
     result = req.get("result")
-    resolvedQuery = result.get("resolvedQuery")
+    contexts = result.get("contexts")
+    name = contexts[0].get("name")
 
-    speech = str(resolvedQuery)
+    speech = str(name)
 
     print("Response:")
     print(speech)
