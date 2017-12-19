@@ -28,9 +28,10 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    result = req.get("id")
+    result = req.get("result")
+    resolvedQuery = result.get("resolvedQuery")
 
-    speech = str(result)
+    speech = str(resolvedQuery)
 
     print("Response:")
     print(speech)
