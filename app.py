@@ -34,13 +34,7 @@ def makeWebhookResult(req):
     components = parameters.get("components")
     emergency = parameters.get("emergency")
 
-    emergency_dict = {
-    "Heart Attack":"Heart attack is very severe", 
-    "Paralysis":"Paralysis is very severe", 
-    "Snake Bite":"Snake bite is very severe", 
-    "Disease4":"", 
-    "Disease5":""
-    }
+    emergency_dict = {"Heart Attack":"Heart attack is very severe", "Paralysis":"Paralysis is very severe", "Snake Bite":"Snake bite is very severe", "Disease4":"", "Disease5":""}
 
     precaution_dict = {
     'Heart Attack':'1. HAP1.~2. HAP2.', 
