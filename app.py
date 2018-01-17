@@ -36,8 +36,12 @@ def makeWebhookResult(req):
 
     emergency_dict = {"Heart Attack":"Heart attack is very severe", "Paralysis":"Paralysis is very severe", "Snake Bite":"Snake bite is very severe", "Disease4":"s", "Disease5":"s"}
 
+    precaution_dict = {"Heart Attack":"1. HAP1.~2. HAP2", "Paralysis":"Paralysis is very severe", "Snake Bite":"Snake bite is very severe", "Disease4":"s", "Disease5":"s"}
+
     if(components == ""):
         speech = str(emergency_dict[emergency])
+    else if(components == "Precaution"):
+        speech = str(precaution_dict[emergency])
     else:
         speech = str("not found")
 
