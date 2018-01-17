@@ -35,7 +35,7 @@ def makeWebhookResult(req):
     emergency = parameters.get("emergency")
 
     if(components == ""):
-        speech "done"
+        speech = str("done")
     else:
         speech = str(components) + str(" webhook ") + str(emergency)
 
