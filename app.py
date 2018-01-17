@@ -46,16 +46,16 @@ def makeWebhookResult(req):
     'Heart Attack':'1. HAP1.~2. HAP2.', 
     'Paralysis':'1. PP1.~2. PP2', 
     'Snake Bite':'1.SBP1.~2.SBP2.', 
-    'Disease4':400, 
-    'Disease5':500
+    'Disease4':'', 
+    'Disease5':''
     }
 
     symptom_dict = {
     'Heart Attack':'1. HAS1.~2. HAS2.', 
     'Paralysis':'1. PS1.~2. PS2.', 
     'Snake Bite':'1. SBS1.~2. SBS2.', 
-    'Disease4':400, 
-    'Disease5':500
+    'Disease4':'', 
+    'Disease5':''
     }
 
     if(components == ""):
@@ -64,7 +64,7 @@ def makeWebhookResult(req):
         speech = str(precaution_dict[emergency])
     else if(components == "Symptom"):
         speech = str(symptom_dict[emergency])
-    else
+    else:
         speech = str("not found")
 
     print("Response:")
