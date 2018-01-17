@@ -40,7 +40,7 @@ def makeWebhookResult(req):
 
     if(components == ""):
         speech = str(emergency_dict[emergency])
-    else if(components == "Precaution"):
+    elif(components == "Precaution"):
         speech = str(precaution_dict[emergency])
     else:
         speech = str("not found")
